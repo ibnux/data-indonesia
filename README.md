@@ -15,7 +15,9 @@ Struktur data
 
 
 struktur **id** Kabupaten diawali dengan **id** Propinsi.
+
 struktur **id** Kecamatan diawali dengan **id** Propinsi dan **id** Kabupaten.
+
 struktur **id** Kelurahan diawali dengan **id** Propinsi, **id** Kabupaten, dan **id** Kecamatan.
 
 total ada 89463 data.
