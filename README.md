@@ -20,4 +20,9 @@ struktur **id** Kecamatan diawali dengan **id** Propinsi dan **id** Kabupaten.
 
 struktur **id** Kelurahan diawali dengan **id** Propinsi, **id** Kabupaten, dan **id** Kecamatan.
 
-total ada 89463 data.
+total ada 91.219 data.
+
+### Support iBNuX
+
+[<img src="https://ibnux.github.io/KaryaKarsa-button/karyaKarsaButton.png" width="128">](https://karyakarsa.com/ibnux)
+[<img src="https://ibnux.github.io/Trakteer-button/trakteer_button.png" width="120">](https://trakteer.id/ibnux)
