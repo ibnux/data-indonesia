@@ -22,7 +22,15 @@ struktur **id** Kelurahan diawali dengan **id** Provinsi, **id** Kabupaten, dan 
 
 total ada 91.219 data.
 
-> untuk contoh cara pakai menggunakan select2 cek berkas contoh.html
+
+Contoh Penggunaan
+-------------
+Untuk contoh cara pakai menggunakan select2 cek berkas [contoh.html](https://github.com/ibnux/data-indonesia/blob/master/contoh.html)
+
+
+Demo
+-------------
+Untuk demo implementasi bisa dilihat disini: [Demo](https://ibnux.github.io/data-indonesia/contoh.html)
 
 ### Support iBNuX
 
