@@ -8,8 +8,15 @@
     <body>
         <label> Provinsi </label>
         <select class="select2-data-array browser-default" id="select2-provinsi"></select>
+        <br>
         <label> Kabupaten </label>
         <select class="select2-data-array browser-default" id="select2-kabupaten"></select>
+        <br>
+        <label> Kecamatan </label>
+        <select class="select2-data-array browser-default" id="select2-kecamatan"></select>
+        <br>
+        <label> Kelurahan </label>
+        <select class="select2-data-array browser-default" id="select2-kelurahan"></select>
     </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -17,56 +24,8 @@
     <script>
         var urlProvinsi = "https://ibnux.github.io/data-indonesia/propinsi.json";
         var urlKabupaten = "https://ibnux.github.io/data-indonesia/kabupaten/";
-
-        console.log('url: ' + urlProvinsi);
-        $.getJSON(urlProvinsi, function (res) {
-            console.log("INSIDE FUNC");
-            //console.log(res);
-
-            var data = $.map(res, function (obj) {
-                obj.text = obj.nama
-
-                return obj;
-            });
-            //console.log(data);
-            loadProvinsi(data);
-        });
-
-        function fetchDataKabupaten(idProvinsi) {
-            let url = urlKabupaten + idProvinsi + ".json";
-            console.log('url kab : ' + url);
-            $.getJSON(url, function (res) {
-                console.log("INSIDE fetchDataKabupaten");
-                //console.log(res);
-
-                var data = $.map(res, function (obj) {
-                    obj.text = obj.nama
-
-                    return obj;
-                });
-                //console.log(data);
-                loadKabupaten(data);
-            });
-        }
-
-
-        function loadProvinsi(data) {
-            console.log('loadProvinsi');
-            $("#select2-provinsi").select2({
-                dropdownAutoWidth: true,
-                width: '100%',
-                data: data
-            })
-        };
-
-        function loadKabupaten(data) {
-            console.log('loadKabupaten');
-            $("#select2-kabupaten").select2({
-                dropdownAutoWidth: true,
-                width: '100%',
-                data: data
-            })
-        };
+        var urlKecamatan = "https://ibnux.github.io/data-indonesia/kecamatan/";
+        var urlKelurahan = "https://ibnux.github.io/data-indonesia/kelurahan/";
 
         function clearOptions(id) {
             console.log("on clearOptions");
@@ -74,6 +33,28 @@
             //$('#' + id).val(null);
             $('#' + id).empty().trigger('change');
         }
+
+        console.log('Load Provinsi...');
+        $.getJSON(urlProvinsi, function (res) {
+
+            res = $.map(res, function (obj) {
+                obj.text = obj.nama
+                return obj;
+            });
+
+            data = [{
+                id: "",
+                nama: "- Pilih Provinsi -",
+                text: "- Pilih Provinsi -"
+            }].concat(res);
+
+            //implemen data ke select provinsi
+            $("#select2-provinsi").select2({
+                dropdownAutoWidth: true,
+                width: '100%',
+                data: data
+            })
+        });
 
         var selectProv = $('#select2-provinsi');
         $(selectProv).change(function () {
@@ -84,18 +65,91 @@
             console.log("value = " + value + " / " + "text = " + text);
 
             clearOptions('select2-kabupaten');
-            dataKabupaten = fetchDataKabupaten(value);
-            loadKabupaten(dataKabupaten);
+            console.log('Load Kabupaten di '+text+'...')
+            $.getJSON(urlKabupaten + value + ".json", function(res) {
 
+                res = $.map(res, function (obj) {
+                    obj.text = obj.nama
+                    return obj;
+                });
+
+                data = [{
+                    id: "",
+                    nama: "- Pilih Kabupaten -",
+                    text: "- Pilih Kabupaten -"
+                }].concat(res);
+
+                //implemen data ke select provinsi
+                $("#select2-kabupaten").select2({
+                    dropdownAutoWidth: true,
+                    width: '100%',
+                    data: data
+                })
+            })
         });
 
         var selectKab = $('#select2-kabupaten');
         $(selectKab).change(function () {
             console.log("on change selectKab");
 
-            var value = $(this).val();
+            var value = $(selectKab).val();
             var text = $('#select2-kabupaten :selected').text();
             console.log("value = " + value + " / " + "text = " + text);
+
+            clearOptions('select2-kecamatan');
+            console.log('Load Kecamatan di '+text+'...')
+            $.getJSON(urlKecamatan + value + ".json", function(res) {
+
+                res = $.map(res, function (obj) {
+                    obj.text = obj.nama
+                    return obj;
+                });
+
+                data = [{
+                    id: "",
+                    nama: "- Pilih Kecamatan -",
+                    text: "- Pilih Kecamatan -"
+                }].concat(res);
+
+                //implemen data ke select provinsi
+                $("#select2-kecamatan").select2({
+                    dropdownAutoWidth: true,
+                    width: '100%',
+                    data: data
+                })
+            })
+        });
+
+        var selectKec = $('#select2-kecamatan');
+        $(selectKec).change(function () {
+            console.log("on change selectKec");
+
+            var value = $(selectKec).val();
+            var text = $('#select2-kecamatan :selected').text();
+            console.log("value = " + value + " / " + "text = " + text);
+
+            clearOptions('select2-kelurahan');
+            console.log('Load Kelurahan di '+text+'...')
+            $.getJSON(urlKelurahan + value + ".json", function(res) {
+
+                res = $.map(res, function (obj) {
+                    obj.text = obj.nama
+                    return obj;
+                });
+
+                data = [{
+                    id: "",
+                    nama: "- Pilih Kelurahan -",
+                    text: "- Pilih Kelurahan -"
+                }].concat(res);
+
+                //implemen data ke select provinsi
+                $("#select2-kelurahan").select2({
+                    dropdownAutoWidth: true,
+                    width: '100%',
+                    data: data
+                })
+            })
         });
     </script>
 
