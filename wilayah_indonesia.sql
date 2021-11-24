@@ -91309,19 +91309,19 @@ INSERT INTO `t_kota` (`id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_propinsi`
+-- Table structure for table `t_provinsi`
 --
 
-CREATE TABLE `t_propinsi` (
+CREATE TABLE `t_provinsi` (
   `id` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nama` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `t_propinsi`
+-- Dumping data for table `t_provinsi`
 --
 
-INSERT INTO `t_propinsi` (`id`, `nama`) VALUES
+INSERT INTO `t_provinsi` (`id`, `nama`) VALUES
 ('11', 'ACEH'),
 ('12', 'SUMATERA UTARA'),
 ('13', 'SUMATERA BARAT'),
@@ -91380,9 +91380,9 @@ ALTER TABLE `t_kota`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `t_propinsi`
+-- Indexes for table `t_provinsi`
 --
-ALTER TABLE `t_propinsi`
+ALTER TABLE `t_provinsi`
   ADD PRIMARY KEY (`id`);
 COMMIT;
 

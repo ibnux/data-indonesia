@@ -17,23 +17,24 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Data Indonesia</h1>
-      <h2 class="project-tagline">Data Propinsi, kabupaten, kecamatan dan kelurahan di Indonesia dalam bentuk json</h2>
+      <h2 class="project-tagline">Data Provinsi, kabupaten, kecamatan dan kelurahan di Indonesia dalam bentuk json</h2>
       <a href="https://github.com/ibnux/data-indonesia" class="btn">Source Code</a>
+      <a href="#demo" class="btn">Demo</a>
     </section>
 
     <section class="main-content">
       <h2>Struktur Data</h2>
       <p>
-      <ul>
-        <li><b>propinsi.json</b></li>
-        <li><b>kabupaten/[id propinsi].json</b> isinya data kabupaten sesuai id propinsi</li>
-        <li><b>kecamatan/[id kabupaten].json</b> isinya data kecamatan sesuai id kabupaten</li>
-        <li><b>kelurahan/[id kecamatan].json</b> isinya data kelurahan sesuai id kecamatan</li>
-      </ul>
+        <ul>
+          <li><b>provinsi.json</b></li>
+          <li><b>kabupaten/[id provinsi].json</b> isinya data kabupaten sesuai id provinsi</li>
+          <li><b>kecamatan/[id kabupaten].json</b> isinya data kecamatan sesuai id kabupaten</li>
+          <li><b>kelurahan/[id kecamatan].json</b> isinya data kelurahan sesuai id kecamatan</li>
+        </ul>
       </p>
-      <p>Saat awal biasanya request dulu <a href="propinsi.json" target="_blank">propinsi.json</a>, ditambahkan ke
+      <p>Saat awal biasanya request dulu <a href="provinsi.json" target="_blank">provinsi.json</a>, ditambahkan ke
         autocomplete</p>
-      <p>Saat propinsi dipilih misal ACEH dengan id 11, lalu rekues ke folder kabupaten untuk mendapatkan daftar
+      <p>Saat provinsi dipilih misal ACEH dengan id 11, lalu rekues ke folder kabupaten untuk mendapatkan daftar
         kabupaten.
         contoh <a href="kabupaten/11.json" target="_blank">kabupaten/11.json</a>
       </p>
@@ -46,15 +47,13 @@
         contoh <a href="kelurahan/1101010.json" target="_blank">kelurahan/1101010.json</a>
       </p>
       <p>dan terpilihlah misal kelurahan LATIUNG dengan id 1101010001</p>
-      <p>Struktur ID 1101010001 = 11+01+010+001 = propinsi+kabupaten+kecamatan+kelurahan</p>
+      <p>Struktur ID 1101010001 = 11+01+010+001 = provinsi+kabupaten+kecamatan+kelurahan</p>
       <hr>
-      <li>
-        Contoh dynamic load data provinsi dan data kabupaten menggunakan lib select2: <a href="contoh.html"> Contoh </a>
-
+      <h2 id="demo">Demo dan Contoh</h2>
+      <p>Contoh menampilkan data secara dinamis dengan Select2: <a href="contoh.html" target="_blank">Demo Select2</a>
         <br>
-        (link <a href="https://select2.org/"> SELECT2</a>)
-        </p>
-      </li>
+        Link: <a href="https://select2.org/" target="_blank">Library Select2</a>
+      </p>
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/ibnux/data-indonesia">Data Indonesia</a> is
           maintained by <a href="https://github.com/ibnux">ibnux</a>.</span>
