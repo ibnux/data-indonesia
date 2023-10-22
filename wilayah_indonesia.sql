@@ -4967,7 +4967,7 @@ INSERT INTO `t_kecamatan` (`id`, `nama`) VALUES
 ('630306', 'Karang Intan'),
 ('630307', 'Astambul'),
 ('630308', 'Simpang Empat'),
-('630309', 'Pengarom'),
+('630309', 'Pengaron'),
 ('630310', 'Sungai Pinang'),
 ('630311', 'Aranio'),
 ('630312', 'Mataraman'),
