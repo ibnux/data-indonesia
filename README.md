@@ -10,8 +10,13 @@ Struktur data
 -------------
 > - provinsi.json
 > - kabupaten/[id provinsi].json
+> - kabupaten/[id kabupaten].json
+> - kota/[id provinsi].json
+> - kota/[id kota].json
 > - kecamatan/[id kabupaten].json
+> - kecamatan/[id kecamatan].json
 > - kelurahan/[id kecamatan].json
+> - kelurahan/[id kelurahan].json
 
 
 struktur **id** Kabupaten diawali dengan **id** Provinsi.
